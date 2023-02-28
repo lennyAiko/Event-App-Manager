@@ -1,4 +1,4 @@
-const Page = () => {
+const EventsPerCityPage = () => {
     return (
       <div>
         <h1>Our Single Event</h1>
@@ -13,4 +13,4 @@ const Page = () => {
     )
   } 
   
-  export default Page
+  export default EventsPerCityPage
