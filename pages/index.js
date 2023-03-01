@@ -25,29 +25,29 @@ export default function Home() {
       </header>
 
       <main className={styles.main}>
-        <a href=''>
+        <a href='/events/london'>
           <img />
           <h2>Events in London</h2>
           <p>
-            {' '}
+            
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
           </p>
         </a>
 
-        <a href=''>
+        <a href='/events/sanfran'>
           <img />
           <h2>Events in San Francisco</h2>
           <p>
-            {' '}
+            
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
           </p>
         </a>
 
-        <a href=''>
+        <a href='/events/barce'>
           <img />
           <h2>Events in Barcelona</h2>
           <p>
-            {' '}
+            
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
           </p>
         </a>
@@ -58,4 +58,14 @@ export default function Home() {
       </footer>
     </>
   )
+}
+
+// it will only work like this, if you put it in the function above it won't work
+// this function runs before the main page that is rendered and it is rendered on the server
+export function getServerSideProps () {
+  return {
+    props: {
+      title: 'Atomic habits'
+    }
+  }
 }
