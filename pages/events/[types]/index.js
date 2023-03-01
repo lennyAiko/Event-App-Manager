@@ -1,4 +1,4 @@
-const EventsPerCityPage = () => {
+const EventsCatPage = () => {
     return (
       <div>
         <h1>Our Single Event</h1>
@@ -13,4 +13,27 @@ const EventsPerCityPage = () => {
     )
   } 
   
-  export default EventsPerCityPage
+  export default EventsCatPage
+
+  // these are for the dynamic paths
+  export async function getStaticPaths() {
+
+    const {events_categories} = await import('/data/data.json')
+    const allPaths = events_categories.map(ev => {
+      return {
+          params: {
+           types: ev.id.toString(), //name of the folder or file
+          }
+      }
+    })
+
+    return {
+      paths: allPaths,
+      fallback: false
+    }
+  }
+
+  export async function getStaticProps(context) {
+    console.log(context)
+    return { props: {} }
+  }
